@@ -1,0 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+}

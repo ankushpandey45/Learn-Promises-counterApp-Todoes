@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: black;
+}
+.second_div {
+  margin-left: 35%;
+}
+.container {
+  text-align: center;
+  margin-top: 70px;
+  background-color: rgb(153, 151, 151);
+  width: 400px;
+  align-items: center;
+  /* height: 100px; */
+  padding: 25px;
+  border-radius: 5px;
+}
+.input_area {
+  width: 250px;
+  height: 35px;
+  border-radius: 5px;
+  border: solid rgb(105, 105, 235) 1px;
+  font-weight: 500;
+  font-size: 15px;
+  padding-left: 5px;
+}
+.add_btn {
+  height: 35px;
+  width: 60px;
+  margin: 5px;
+  border: solid blueviolet 2px;
+  color: blueviolet;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 5px;
+}
+.add_btn:hover {
+  background-color: blueviolet;
+  color: white;
+}
+.li_cls {
+  text-align: center;
+  align-items: center;
+  margin-top: 1%;
+  border-radius: 5px;
+  background-color: #445b7a;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  height: 40px;
+}
+.val_span {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.btn_div {
+  margin-right: 45px;
+  color: blue;
+  cursor: pointer;
+  max-width: 100px;
+  display: flex;
+  align-items: center;
+}
+/* .dlt_btn {
+  height: 25px;
+  width: 60px;
+  margin: 5px;
+  border: solid red 2px;
+  background-color: black;
+  color: red;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+} */
+.dlt:hover {
+  background-color: red;
+  color: white;
+  border: solid red 2px;
+}
+.edit:hover {
+  background-color: green;
+  color: white;
+  border: solid green 2px;
+}
+/* .edit_btn {
+  height: 25px;
+  width: 60px;
+  border: solid green 2px;
+  background-color: black;
+  color: green;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+} */
+/* .edit_btn:hover {
+  background-color: green;
+  color: white;
+} */

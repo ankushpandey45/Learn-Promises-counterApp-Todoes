@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .todo-container {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .todo-item {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .todo-item input[type="text"] {
+        flex: 1;
+        margin-right: 10px;
+        padding: 5px;
+      }
+      .todo-item button {
+        margin-right: 5px;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+      }
+      .todo-item button.delete {
+        background-color: #ff6347;
+        color: white;
+      }
+      .todo-item button.edit {
+        background-color: #4682b4;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="todo-container">
+      <h2>Todo App</h2>
+
+      <div>
+        <input type="text" id="todo-input" placeholder="Enter a task" />
+        <button onclick="addTodo()">Add</button>
+        <div id="todo-list"></div>
+      </div>
+    </div>
+
+    <script>
+      const todoList = document.getElementById("todo-list");
+      const todoInput = document.getElementById("todo-input");
+      let todos = [];
+
+      function renderTodos() {
+        todoList.innerHTML = "";
+        todos.forEach((todo, index) => {
+          const todoItem = document.createElement("div");
+          todoItem.classList.add("todo-item");
+          todoItem.innerHTML = `
+        <input type="text" class="todo-text" value="${todo}" disabled>
+        <button class="delete" onclick="deleteTodo(${index})">Delete</button>
+        <button class="edit" onclick="editTodo(${index})">Edit</button>
+      `;
+          todoList.appendChild(todoItem);
+        });
+      }
+
+      function addTodo() {
+        const newTodo = todoInput.value.trim();
+        if (newTodo !== "") {
+          todos.push(newTodo);
+          renderTodos();
+          todoInput.value = "";
+        }
+      }
+
+      function deleteTodo(index) {
+        todos.splice(index, 1);
+        renderTodos();
+      }
+
+      function editTodo(index) {
+        const newText = prompt("Enter new task:", todos[index]);
+        if (newText !== null) {
+          todos[index] = newText.trim();
+          renderTodos();
+        }
+      }
+    </script>
+  </body>
+</html>

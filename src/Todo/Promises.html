@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let ankush = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("hello ankush");
+        }, 2000);
+      });
+      ankush.then((val) => {
+        //console.log(val);
+      });
+
+      let newPromise = async () => {
+        let delhiweather = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("30 deg");
+          }, 2000);
+        });
+        let suratwheather = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("35 deg");
+          }, 6000);
+        });
+        // console.log("fetching delhi weather....");
+        const delw = await delhiweather;
+        //console.log("fetching delhi weather" + delw);
+        //console.log("fetching surat weather....");
+        const suratw = await suratwheather;
+        //console.log("fetching surat weather" + suratw);
+        return [delw, suratw];
+      };
+      newPromise();
+
+      const myobj = {
+        name: "ankush",
+        age: "23",
+        getname: function () {
+          return this.name;
+        },
+      };
+      // console.log(myobj);
+
+      const myobj1 = {
+        roll: 1,
+        name: "vivek",
+        _proto_: myobj,
+      };
+      // console.log(myobj1);
+
+      Array.prototype.show = function () {
+        return this;
+      };
+      const cities = ["surat"];
+      console.log(cities.show());
+
+      Array.prototype.converintoobject = function () {
+        let newobject = {};
+        this.forEach((element) => {
+          newobject[element] = element;
+        });
+        return newobject;
+      };
+      console.log(cities.converintoobject());
+
+      function Myprototype(name) {
+        this.name = name;
+      }
+      Myprototype.prototype = myobj;
+      const myprop = new Myprototype("prince");
+      console.log(myprop.getname());
+
+      const person = {
+        id: 1,
+        name: "ankush",
+        age:"keys",
+        hobbie: "cricket",
+      };
+
+      const xyz = Object.keys(person);
+      // for (const [key, value] of xyz) {
+      //   console.log(key);
+      //   console.log(value);
+      // }
+      console.log(xyz);
+    </script>
+  </body>
+</html>

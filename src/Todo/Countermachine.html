@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Countermachine() {
+        let counter = 25;
+        let isActive = false;
+        let interval = null;
+        const counterElement = document.createElement("h1");
+        counterElement.textContent = counter;
+        const resetButton = document.createElement("button");
+        resetButton.textContent = "Reset";
+        resetButton.addEventListener("click", handleResetbtn);
+        const startPauseButton = document.createElement("button");
+        startPauseButton.textContent = "Start";
+        startPauseButton.addEventListener("click", handleButton);
+
+        function tick() {
+          counter--;
+          updateCounter();
+        }
+
+        function updateCounter() {
+          counterElement.textContent = counter;
+        }
+
+        function handleButton() {
+          if (!isActive) {
+            isActive = true;
+            interval = setInterval(tick, 1000);
+            startPauseButton.textContent = "Pause";
+          } else {
+            isActive = false;
+            clearInterval(interval);
+            startPauseButton.textContent = "Start";
+          }
+        }
+
+        function handleResetbtn() {
+          clearInterval(interval);
+          isActive = false;
+          counter = 25;
+          updateCounter();
+          startPauseButton.textContent = "Start";
+        }
+
+        const container = document.createElement("div");
+        container.appendChild(counterElement);
+        container.appendChild(resetButton);
+        container.appendChild(startPauseButton);
+        return container;
+      }
+
+      document.body.appendChild(Countermachine());
+    </script>
+  </body>
+</html>

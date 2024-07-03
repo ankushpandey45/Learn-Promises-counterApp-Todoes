@@ -1,0 +1,13 @@
+.table_div {
+  padding: 30px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+}
+td,
+th {
+  border: 2px solid #cec3c3;
+  padding: 10px;
+}

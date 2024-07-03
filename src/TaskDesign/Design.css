@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.Container_div {
+  border: 1px dotted grey;
+  width: 40%;
+}
+.content_div {
+  border: 1px solid rgb(179, 175, 175);
+  margin-top: 15px;
+}
+.Data_div {
+  margin-top: 10px;
+}
+.Heading_div {
+  font-weight: 700;
+}
+.HeadingView_div {
+  display: flex;
+  justify-content: space-between;
+}
+.Email_div {
+  display: flex;
+  justify-content: space-around;
+}
+.MOB_div {
+  display: flex;
+  justify-content: space-around;
+}
+.DOB_div {
+  display: flex;
+  justify-content: space-around;
+}
+.SSN_div {
+  display: flex;
+  justify-content: space-around;
+}
+.KYC_div {
+  display: flex;
+  justify-content: space-around;
+}
+.AML_div {
+  display: flex;
+  justify-content: space-around;
+}
+.Session_div {
+  display: flex;
+  justify-content: space-around;
+}
