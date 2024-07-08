@@ -22,7 +22,7 @@ const Countermachine1 = () => {
   }, [counter, startcounter, interval]);
 
   const handleStartbtn = () => {
-    setStartcounter(true);
+    setStartcounter(!startcounter);
   };
   const handleRestart = () => {
     setCounter(25);
